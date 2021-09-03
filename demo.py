@@ -163,6 +163,8 @@ def vis_detections(im,  dets, image_name , thresh=0.5):
     plt.savefig(args.save_folder+image_name, dpi=fig.dpi)
 
 def test_oneimage():
+    torch.set_grad_enabled(False)
+
     # load net
     cfg = widerface_640
     num_classes = len(WIDERFace_CLASSES) + 1 # +1 background
